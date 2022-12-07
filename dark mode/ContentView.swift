@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isDark = false
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+            
+            Button("Dark mode : \(isDark ? "on" : "off ")") {
+                isDark.toggle()
+                
+            }
+        }.preferredColorScheme(isDark ? .dark : .light )
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        
     }
 }
+ 
